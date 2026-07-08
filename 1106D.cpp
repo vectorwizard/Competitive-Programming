@@ -8,6 +8,8 @@ inline void fastio() {
 }
 
 void solve() {
+    int n;
+    cin>>n;
     
 }
 

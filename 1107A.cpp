@@ -8,12 +8,17 @@ inline void fastio() {
 }
 
 void solve() {
-    
+    int x,y;
+    cin>>x>>y;
+    if(x%y==0){
+        cout<<"YES"<<endl;
+    }
+    else cout<<"NO"<<endl;
 }
 
 int main() {
     fastio();
-    ll t=1;
+    ll t;
     cin>>t;
     while (t--) solve();
     return 0;

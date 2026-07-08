@@ -8,12 +8,17 @@ inline void fastio() {
 }
 
 void solve() {
-    
+    ll x;
+    cin>>x;
+    string s = to_string(x);
+    s = s+s;
+    ll n = stoll(s);
+    cout<<(n/x)<<endl;
 }
 
 int main() {
     fastio();
-    ll t=1;
+    ll t;
     cin>>t;
     while (t--) solve();
     return 0;
