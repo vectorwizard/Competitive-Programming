@@ -7,16 +7,19 @@ inline void fastio() {
     cin.tie(nullptr);
 }
 
-void solve() {
-    ll n,k,x;
-    cin>>n>>k>>x;
-    ll mini = k*(k+1)/2;
-    ll y = n-k;
-    ll maxi = n*(n+1)/2 - y*(y+1)/2;
-    if((x>=mini) && (x<=maxi)){
-        cout<<"YES"<<endl;
+void solve() {  
+    ll n;
+    cin>>n;
+    ll maxi = 0;
+    ll cnt = 0;
+    for(ll i=1;i<=1e2;i++){
+        if(n%i==0){
+            cnt++;
+            maxi = max(maxi,cnt);
+        }
+        else cnt = 0;
     }
-    else cout<<"NO"<<endl;
+    cout<<maxi<<endl;
 }
 
 int main() {
