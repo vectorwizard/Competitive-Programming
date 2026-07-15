@@ -12,25 +12,20 @@ void solve() {
     cin>>n;
     vector<ll> a(n);
     for(ll i=0;i<n;i++) cin>>a[i];
-    map<ll,ll> mpp;
-    for(ll i=0;i<n;i++) mpp[a[i]]++;
-    ll maxi = 0;
-    for(auto it:mpp){
-        maxi = max(maxi,it.second);
+    ll ones = 0;
+    for(ll i=0;i<n;i++){
+        if(a[i]==1) ones++; 
     }
-    if(mpp.size()==1){
+    if(ones==0){
         cout<<0<<endl;
         return;
     }
-    ll cnt = 0;
-    while(maxi!=n){
-        cnt++;
-        ll need = (n-maxi);
-        ll mini = min(need,maxi);
-        cnt+=mini;
-        maxi+=mini;
+    ll zeros = 0;
+    for(ll i=0;i<n;i++){
+        if(a[i]==0) zeros++; 
     }
-    cout<<cnt<<endl;
+    ll x = (1LL<<zeros);
+    cout<<(ones*x)<<endl;
 } 
 
 int main() {

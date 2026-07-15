@@ -8,9 +8,10 @@ inline void fastio() {
 }
 
 void solve() {  
-    int n,k;
-    string s;
-    cin>>s;
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++) cin>>a[i];
     
 } 
 

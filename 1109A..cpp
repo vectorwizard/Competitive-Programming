@@ -8,10 +8,21 @@ inline void fastio() {
 }
 
 void solve() {  
-    int n,k;
+    int n;
+    cin>>n;
     string s;
     cin>>s;
-    
+    int maxi = 0;
+    int cnt = 0;
+    for(int i=0;i<n;i++){
+        if(s[i]=='#') cnt++;
+        else{
+            maxi = max(maxi,cnt);
+            cnt = 0;
+        }
+    }
+    maxi = max(maxi,cnt);
+    cout<<(maxi+1)/2<<endl;
 } 
 
 int main() {
