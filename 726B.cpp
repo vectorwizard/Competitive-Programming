@@ -8,11 +8,9 @@ inline void fastio() {
 }
 
 void solve() {  
-    int n;
-    cin>>n;
-    vector<int> a(n+1);
-    for(int i=1;i<=n;i++) cin>>a[i];
-    
+    ll n,m,i,j;
+    cin>>n>>m>>i>>j;
+    cout<<1<<" "<<1<<" "<<n<<" "<<m<<endl;
 } 
 
 int main() {

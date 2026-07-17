@@ -12,13 +12,22 @@ void solve() {
     cin>>n>>x;
     vector<ll> a(n);
     for(ll i=0;i<n;i++) cin>>a[i];
-    ll maxi = 0;
+    ll sum = 0;
+    queue<pair<ll,ll>> q;
     for(ll i=0;i<n;i++){
-        ll y = (a[i]+x-1)/x;
-        maxi+=y;
+        q.push({a[i],1});
+        sum+=a[i];
     }
-    ll sum = accumulate(a.begin(),a.end(),0LL);
-    cout<<(sum+x-1)/x<<" "<<maxi<<endl;
+    while(!q.empty()){
+        auto it = q.front();
+        q.pop();
+        ll nu = it.first;
+        ll cnt = it.second;
+        if((nu%x)!=0) break;
+        q.push({nu/x,(cnt*x)});
+        sum+=(nu*cnt);
+    }
+    cout<<sum<<endl;
 } 
 
 int main() {
