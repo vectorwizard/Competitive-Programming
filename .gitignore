@@ -1,0 +1,17 @@
+# Executables
+*.exe
+*.dll
+*.bin
+
+# Build/output folders
+dist/
+build/
+out/
+
+# Node
+node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
