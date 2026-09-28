@@ -8,35 +8,31 @@ inline void fastio() {
 }
 
 void solve() {
-    ll n;
-    cin>>n;
+    ll n,m;
+    cin>>n>>m;
     vector<ll> a(n);
     for(ll i=0;i<n;i++) cin>>a[i];
-    vector<ll> vec(n);
-    for(ll i=0;i<n;i++){
-        vec[i] = a[i] - i;
-    }
-    ll ans = 0;
-    set<ll> st(vec.begin(),vec.end());
     ll curr = 0;
-    ll last = -1;
-    for(auto it:st){
-        if(it==(last+1)){
-            curr++;
+    for(ll i=0;i<n;i++){
+        ll next = curr + a[i];
+        if(next<m){
+            curr+=a[i];
+            cout<<0<<" ";
         }
         else{
-            curr = 1;
+            ll temp = curr+a[i];
+            ll turn = (temp/m);
+            curr=(curr+a[i])%m;
+            cout<<turn<<" ";
         }
-        ans = max(ans,curr);
-        last = it;
     }
-    cout<<ans<<endl;
+    cout<<endl;
 }
 
 int main() {
     fastio();
     ll t=1;
-    cin>>t;
+    // cin>>t;
     while (t--) solve();
     return 0;
 }
