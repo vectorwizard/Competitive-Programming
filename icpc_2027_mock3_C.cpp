@@ -29,17 +29,21 @@ ll ncr(ll n,ll r){
 }
 
 void solve() {  
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++) cin>>a[i];
     
 } 
  
 int main() {
     fastio();
-    fact.assign(100001,0);
-    fact[0] = 1;
-    fact[1] = 1;
-    for(ll i=2;i<=1e5;i++){
-        fact[i] = (fact[i-1]*i)%mod;
-    }
+    // fact.assign(100001,0);
+    // fact[0] = 1;
+    // fact[1] = 1;
+    // for(ll i=2;i<=1e5;i++){
+    //     fact[i] = (fact[i-1]*i)%mod;
+    // }
     ll t=1;
     cin>>t;
     while (t--) solve();

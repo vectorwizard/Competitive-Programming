@@ -29,17 +29,24 @@ ll ncr(ll n,ll r){
 }
 
 void solve() {  
-    
+    vector<ll> a(3);
+    cin>>a[0];
+    cin>>a[1];
+    cin>>a[2];
+    sort(a.begin(),a.end());
+    ll ans = a[2]-a[0];
+    ans = min(ans,a[1]);
+    cout<<ans<<endl;
 } 
  
 int main() {
     fastio();
-    fact.assign(100001,0);
-    fact[0] = 1;
-    fact[1] = 1;
-    for(ll i=2;i<=1e5;i++){
-        fact[i] = (fact[i-1]*i)%mod;
-    }
+    // fact.assign(100001,0);
+    // fact[0] = 1;
+    // fact[1] = 1;
+    // for(ll i=2;i<=1e5;i++){
+    //     fact[i] = (fact[i-1]*i)%mod;
+    // }
     ll t=1;
     cin>>t;
     while (t--) solve();
