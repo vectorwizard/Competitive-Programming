@@ -7,10 +7,6 @@ inline void fastio() {
     cin.tie(nullptr);
 }
 
-ll lcm(ll x,ll y){
-    return ((x*y)/__gcd(x,y));
-}
-
 void solve() {
     ll n;
     cin>>n;
@@ -20,17 +16,16 @@ void solve() {
     for(auto it:a) mpp[it]++;
     ll target = mpp.begin()->first * mpp.rbegin()->first;
     for(auto it:mpp){
-        if(it.second%2!=0){
+        if(target%it.first!=0){
             cout<<"NO"<<endl;
             return;
         }
-        ll freq = it.second*2;
-        ll b = (target/it.first);
-        if((target%it.first)!=0){
+        int b = target/it.first;
+        if(it.second%2==1 || mpp[b]%2==1){
             cout<<"NO"<<endl;
             return;
         }
-        if((mpp[b]*2)!=freq){
+        if(it.second!=mpp[b]){
             cout<<"NO"<<endl;
             return;
         }
